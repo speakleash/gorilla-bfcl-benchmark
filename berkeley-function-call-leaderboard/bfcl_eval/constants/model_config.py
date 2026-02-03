@@ -33,6 +33,7 @@ from bfcl_eval.model_handler.api_inference.nanbeige import NanbeigeAPIHandler
 from bfcl_eval.model_handler.api_inference.writer import WriterHandler
 from bfcl_eval.model_handler.local_inference.arch import ArchHandler
 from bfcl_eval.model_handler.local_inference.bielik import BielikHandler
+from bfcl_eval.model_handler.local_inference.bielik_fc import BielikFCHandler
 from bfcl_eval.model_handler.local_inference.bitagent import BitAgentHandler
 from bfcl_eval.model_handler.local_inference.deepseek_reasoning import (
     DeepseekReasoningHandler,
@@ -2059,6 +2060,18 @@ local_inference_model_map = {
         org="Nanbeige",
         license="apache-2.0",
         model_handler=NanbeigeFCHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    "bielik-minitron-7B": ModelConfig(
+        model_name="bielik-minitron-7B",
+        display_name="Bielik-Minitron-7B (FC)",
+        url="",
+        org="Bielik",
+        license="apache-2.0",
+        model_handler=BielikFCHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
